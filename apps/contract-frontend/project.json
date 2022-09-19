@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/contract-frontend",
         "index": "apps/contract-frontend/src/index.html",
@@ -17,7 +19,10 @@
           "apps/contract-frontend/src/favicon.ico",
           "apps/contract-frontend/src/assets"
         ],
-        "styles": ["apps/contract-frontend/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/contract-frontend/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -85,7 +90,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/contract-frontend"],
+      "outputs": [
+        "coverage/apps/contract-frontend"
+      ],
       "options": {
         "jestConfig": "apps/contract-frontend/jest.config.ts",
         "passWithNoTests": true
