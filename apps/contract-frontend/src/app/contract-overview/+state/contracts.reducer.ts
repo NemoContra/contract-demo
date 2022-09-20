@@ -1,43 +1,48 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
-import * as ContractsActions from './contracts.actions';
-import { ContractsEntity } from './contracts.models';
+import { ContractActions } from './contracts.actions';
+import { Contract } from '@contract-demo/api-interfaces';
 
 export const CONTRACTS_FEATURE_KEY = 'contracts';
 
-export interface ContractsState extends EntityState<ContractsEntity> {
-  selectedId?: string | number; // which Contracts record has been selected
-  loaded: boolean; // has the Contracts list been loaded
-  error?: string | null; // last known error (if any)
+export interface ContractsState extends EntityState<Contract> {
+  contracts?: Contract[];
+  totalElements?: number;
+  loaded: boolean;
+  error?: number;
 }
 
 export interface ContractsPartialState {
   readonly [CONTRACTS_FEATURE_KEY]: ContractsState;
 }
 
-export const contractsAdapter: EntityAdapter<ContractsEntity> =
-  createEntityAdapter<ContractsEntity>();
+export const contractsAdapter: EntityAdapter<Contract> = createEntityAdapter<Contract>();
 
 export const initialContractsState: ContractsState =
   contractsAdapter.getInitialState({
-    // set initial required properties
     loaded: false,
   });
 
 const reducer = createReducer(
   initialContractsState,
-  on(ContractsActions.initContracts, (state) => ({
+  on(ContractActions.get, (state) => ({
     ...state,
     loaded: false,
-    error: null,
+    error: undefined,
   })),
-  on(ContractsActions.loadContractsSuccess, (state, { contracts }) =>
-    contractsAdapter.setAll(contracts, { ...state, loaded: true })
+  on(ContractActions.success, (state, { filterResult }) =>
+    contractsAdapter.setAll(filterResult.contracts, {
+      ...state,
+      totalElements: filterResult.totalElements,
+      loaded: true
+    })
   ),
-  on(ContractsActions.loadContractsFailure, (state, { error }) => ({
+  on(ContractActions.error, (state, { errorCode }) => ({
     ...state,
-    error,
+    error: errorCode,
+    loaded: true,
+    totalElements: 0
   }))
 );
 

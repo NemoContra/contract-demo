@@ -1,25 +1,29 @@
-import {Injectable} from '@angular/core';
-import {createEffect, Actions, ofType} from '@ngrx/effects';
-import {fetch} from '@nrwl/angular';
+import { Injectable } from '@angular/core';
+import { createEffect, Actions, ofType } from '@ngrx/effects';
 
-import {ContractActions} from "./contracts.actions";
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import { ContractActions } from './contracts.actions';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { ContractFilterQuery, FilterResult } from '@contract-demo/api-interfaces';
+import { catchError, map, of, switchMap } from 'rxjs';
 
 @Injectable()
 export class ContractsEffects {
-  init$ = createEffect(() =>
+  filterContracts$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ContractActions.getcontracts),
-      fetch({
-        run: (action) => {
-          // Your custom service 'load' logic goes here. For now just return a success action...
-          return ContractActions.getcontractsSuccess({result: []});
-        },
-        onError: (action, error: HttpErrorResponse) => {
-          console.error('Error', error);
-          return ContractActions.getcontractsFailure({errorCode: error.status});
-        },
-      })
+      ofType(ContractActions.get),
+      switchMap(({ filterQuery }: { filterQuery?: ContractFilterQuery }) => {
+        let filterParams: HttpParams = new HttpParams();
+
+        if (filterQuery?.term) {
+          filterParams = filterParams.set('term', filterQuery.term);
+        }
+
+        return this.httpClient.get<FilterResult>('/api/contracts', { params: filterParams })
+          .pipe(
+            map(response => ContractActions.success({ filterResult: response })),
+            catchError((error) => of(ContractActions.error({ errorCode: error.status })))
+          );
+      }),
     )
   );
 

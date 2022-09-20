@@ -1,1 +1,55 @@
-<p>contract-overview works!</p>
+<form>
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput [formControl]="searchTermControl" placeholder="Search for name">
+  </mat-form-field>
+</form>
+
+<div class="mat-elevation-z8">
+  <ng-container *ngIf="isError$ | async as errorCode; else success">
+    <div class="error">
+      Search failed with HTTP-Error {{errorCode}}
+    </div>
+  </ng-container>
+  <ng-template #success>
+    <ng-container *ngIf="loaded$ | async; else isLoading">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID</th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Firstname</th>
+          <td mat-cell *matCellDef="let row"> {{row.person.firstname}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Lastname</th>
+          <td mat-cell *matCellDef="let row"> {{row.person.lastname}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="contractType">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Contract Type</th>
+          <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No contracts found.</td>
+        </tr>
+      </table>
+    </ng-container>
+    <ng-template #isLoading>
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </ng-template>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [length]="totalElements$ | async"
+                 aria-label="Select page of contracts"></mat-paginator>
+</div>

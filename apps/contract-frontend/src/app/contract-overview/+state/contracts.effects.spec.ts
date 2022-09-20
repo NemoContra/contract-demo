@@ -34,7 +34,7 @@ describe('ContractsEffects', () => {
         a: ContractsActions.loadContractsSuccess({ contracts: [] }),
       });
 
-      expect(effects.init$).toBeObservable(expected);
+      expect(effects.filterContracts$).toBeObservable(expected);
     });
   });
 });
