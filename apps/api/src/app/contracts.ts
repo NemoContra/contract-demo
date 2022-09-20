@@ -80,5 +80,5 @@ export const contractsData: Contract[] = [
       firstname: 'Marge',
     },
     type: 'Krankenversicherung',
-  }
-]
+  },
+];

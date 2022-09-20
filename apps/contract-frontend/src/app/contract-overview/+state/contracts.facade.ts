@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
 import { ContractActions } from './contracts.actions';
 import { ContractFilterQuery } from '@contract-demo/api-interfaces';
-import { getAllContracts, getContractsError, getContractsLoaded, getTotalElements } from './contracts.selectors';
+import {
+  getAllContracts,
+  getContractsError,
+  getContractsLoaded,
+} from './contracts.selectors';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ContractsFacade {
-  loaded$ = this.store.pipe(select(getContractsLoaded));
-  allContracts$ = this.store.pipe(select(getAllContracts));
-  totalElements$ = this.store.pipe(select(getTotalElements));
-  getContractsError$ = this.store.pipe(select(getContractsError));
+  loaded$ = this.store.select(getContractsLoaded);
+  allContracts$ = this.store.select(getAllContracts);
+  getContractsError$ = this.store.select(getContractsError);
 
-  constructor(private readonly store: Store) {
-  }
+  constructor(private readonly store: Store) {}
 
-  getContracts(filterQuery?: ContractFilterQuery) {
+  getContracts(filterQuery?: ContractFilterQuery): void {
     this.store.dispatch(ContractActions.get({ filterQuery }));
   }
 }

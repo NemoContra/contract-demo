@@ -17,17 +17,22 @@ import { EffectsModule } from '@ngrx/effects';
     BrowserAnimationsModule,
     RouterModule.forRoot([
       {
-        path: 'contracts',
+        path: '',
         loadChildren: () =>
-          import('./contract-overview/contract-overview.module').then((m) => m.ContractOverviewModule)
-      }
+          import('./contract-overview/contract-overview.module').then(
+            (m) => m.ContractOverviewModule
+          ),
+      },
+      {
+        path: '**',
+        redirectTo: '',
+        pathMatch: 'full',
+      },
     ]),
     MatButtonModule,
     StoreModule.forRoot([]),
     EffectsModule.forRoot(),
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

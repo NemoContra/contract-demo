@@ -1,6 +1,5 @@
 export interface ContractFilterQuery {
   term?: string;
-  contractType?: ContractType
 }
 
 export interface Contract {
@@ -8,7 +7,7 @@ export interface Contract {
   person: {
     firstname: string;
     lastname: string;
-  }
+  };
   type: ContractType;
 }
 

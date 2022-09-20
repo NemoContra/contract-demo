@@ -1,15 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  CONTRACTS_FEATURE_KEY,
-  ContractsState,
-  contractsAdapter,
-} from './contracts.reducer';
+import { CONTRACTS_FEATURE_KEY, ContractsState } from './contracts.reducer';
 
 export const getContractsState = createFeatureSelector<ContractsState>(
   CONTRACTS_FEATURE_KEY
 );
-
-const { selectAll } = contractsAdapter.getSelectors();
 
 export const getContractsLoaded = createSelector(
   getContractsState,
@@ -23,10 +17,5 @@ export const getContractsError = createSelector(
 
 export const getAllContracts = createSelector(
   getContractsState,
-  (state: ContractsState) => selectAll(state)
+  (state: ContractsState) => state.filterResult
 );
-
-export const getTotalElements = createSelector(
-  getContractsState,
-  (state: ContractsState) => state.totalElements
-)

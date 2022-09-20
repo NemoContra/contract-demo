@@ -1,8 +1,13 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { ContractsFacade } from './+state/contracts.facade';
 import { Observable } from 'rxjs';
-import { Contract } from '@contract-demo/api-interfaces';
-import { MatSort } from '@angular/material/sort';
+import { Contract, FilterResult } from '@contract-demo/api-interfaces';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
@@ -11,13 +16,14 @@ import { FormControl } from '@angular/forms';
   selector: 'contract-demo-contract-overview',
   templateUrl: './contract-overview.component.html',
   styleUrls: ['./contract-overview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContractOverviewComponent implements OnInit, AfterViewInit {
-  contracts$: Observable<Contract[] | undefined> = this.contractsFacade.allContracts$;
-  totalElements$: Observable<number | undefined> = this.contractsFacade.totalElements$;
+  filterResult$: Observable<FilterResult | undefined> =
+    this.contractsFacade.allContracts$;
   loaded$: Observable<boolean> = this.contractsFacade.loaded$;
-  isError$: Observable<number | undefined> = this.contractsFacade.getContractsError$;
+  isError$: Observable<number | undefined> =
+    this.contractsFacade.getContractsError$;
 
   displayedColumns: string[] = ['id', 'firstname', 'lastname', 'contractType'];
   dataSource: MatTableDataSource<Contract> = new MatTableDataSource<Contract>();
@@ -25,30 +31,30 @@ export class ContractOverviewComponent implements OnInit, AfterViewInit {
   searchTermControl = new FormControl<string>('', { nonNullable: true });
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private readonly contractsFacade: ContractsFacade) {
-  }
+  constructor(private readonly contractsFacade: ContractsFacade) {}
 
   ngOnInit(): void {
     this.contractsFacade.getContracts();
 
-    this.searchTermControl.valueChanges.subscribe(value => this.applyFilter(value))
+    this.searchTermControl.valueChanges.subscribe((searchterm: string) =>
+      this.applyFilter(searchterm)
+    );
 
-    this.contractsFacade.allContracts$.subscribe((contracts) => this.dataSource.data = contracts)
+    this.contractsFacade.allContracts$.subscribe(
+      (filterResult) => (this.dataSource.data = filterResult?.contracts)
+    );
   }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
-  applyFilter(term: string) {
+  applyFilter(term: string): void {
     this.contractsFacade.getContracts({ term });
 
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
   }
-
 }

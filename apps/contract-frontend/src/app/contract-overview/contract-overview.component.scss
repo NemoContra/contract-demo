@@ -1,5 +1,6 @@
-table {
-  width: 100%;
+h1 {
+  display: flex;
+  justify-content: center;
 }
 
 .mat-form-field {
@@ -7,11 +8,17 @@ table {
   width: 100%;
 }
 
-td, th {
+table {
+  width: 100%;
+}
+
+td,
+th {
   width: 25%;
 }
 
-.loading, .error {
+.loading,
+.error {
   display: flex;
   justify-content: center;
   padding-top: 20px;

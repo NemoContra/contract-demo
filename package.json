@@ -6,7 +6,7 @@
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "serve:mock": "nx serve --project api",
-    "start": "nx serve --project api & nx serve --project contract-frontend",
+    "start": "nx run contract-frontend:serve-all",
     "build": "nx build",
     "test": "nx test"
   },
