@@ -1,0 +1,25 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}

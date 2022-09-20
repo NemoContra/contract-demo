@@ -1,0 +1,531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContractOverviewComponent should show correct initial content 1`] = `
+<contract-demo-contract-overview
+  __ngContext__="0"
+  contractsFacade={[Function Object]}
+  dataSource={[Function MatTableDataSource]}
+  displayedColumns={[Function Array]}
+  filterResult$={[Function Subject]}
+  isError$={[Function Subject]}
+  loaded$={[Function Subject]}
+  paginator={[Function MatPaginator]}
+  searchTermControl={[Function FormControl2]}
+>
+  <h1>
+    Contracts overview
+  </h1><form
+    novalidate=""
+  >
+    <mat-form-field
+      appearance="standard"
+      class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-standard mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-valid _mat-animation-noopable"
+    >
+      <div
+        class="mat-form-field-wrapper"
+      >
+        <div
+          class="mat-form-field-flex"
+        >
+          <div
+            class="mat-form-field-infix"
+          >
+            <input
+              aria-invalid="false"
+              aria-required="false"
+              class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid cdk-text-field-autofill-monitored"
+              data-placeholder="Search for name"
+              matinput=""
+              placeholder="Search for name"
+            />
+            <span
+              class="mat-form-field-label-wrapper"
+            >
+              <label
+                class="mat-form-field-label mat-empty mat-form-field-empty"
+              >
+                <mat-label>
+                  Filter
+                </mat-label>
+              </label>
+            </span>
+          </div>
+        </div>
+        <div
+          class="mat-form-field-underline"
+        >
+          <span
+            class="mat-form-field-ripple"
+          />
+        </div>
+        <div
+          class="mat-form-field-subscript-wrapper"
+        >
+          <div
+            class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+            style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+          >
+            <div
+              class="mat-form-field-hint-spacer"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-form-field>
+  </form><div
+    class="mat-elevation-z8"
+  >
+    <div
+      class="loading"
+    >
+      <mat-spinner
+        class="mat-progress-spinner mat-spinner mat-primary mat-progress-spinner-indeterminate-animation _mat-animation-noopable"
+        mode="indeterminate"
+        role="progressbar"
+        style="width: 100px; height: 100px;"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          style="width: 100px; height: 100px;"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50%"
+            cy="50%"
+            r="45"
+            style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.7433388230814px; stroke-width: 10%; transform-origin: 50% 50%;"
+          />
+        </svg>
+      </mat-spinner>
+    </div>
+    <mat-paginator
+      aria-label="Select page of contracts"
+      class="mat-paginator"
+      role="group"
+    >
+      <div
+        class="mat-paginator-outer-container"
+      >
+        <div
+          class="mat-paginator-container"
+        >
+          <div
+            class="mat-paginator-page-size"
+          >
+            <div
+              class="mat-paginator-page-size-label"
+            >
+               Items per page: 
+            </div>
+            <mat-form-field
+              class="mat-form-field mat-paginator-page-size-select mat-primary mat-form-field-type-mat-select mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder _mat-animation-noopable"
+            >
+              <div
+                class="mat-form-field-wrapper"
+              >
+                <div
+                  class="mat-form-field-flex"
+                >
+                  <div
+                    class="mat-form-field-infix"
+                  >
+                    <mat-select
+                      aria-autocomplete="none"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-invalid="false"
+                      aria-label="Items per page:"
+                      aria-required="false"
+                      class="mat-select mat-select-empty"
+                      role="combobox"
+                      tabindex="0"
+                    >
+                      <div
+                        cdk-overlay-origin=""
+                        class="mat-select-trigger"
+                      >
+                        <div
+                          class="mat-select-value"
+                        >
+                          <span
+                            class="mat-select-placeholder mat-select-min-line"
+                          >
+                          </span>
+                        </div>
+                        <div
+                          class="mat-select-arrow-wrapper"
+                        >
+                          <div
+                            class="mat-select-arrow"
+                          />
+                        </div>
+                      </div>
+                    </mat-select>
+                    <span
+                      class="mat-form-field-label-wrapper"
+                    >
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="mat-form-field-underline"
+                >
+                  <span
+                    class="mat-form-field-ripple"
+                  />
+                </div>
+                <div
+                  class="mat-form-field-subscript-wrapper"
+                >
+                  <div
+                    class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+                    style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+                  >
+                    <div
+                      class="mat-form-field-hint-spacer"
+                    />
+                  </div>
+                </div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div
+            class="mat-paginator-range-actions"
+          >
+            <div
+              class="mat-paginator-range-label"
+            >
+               0 of 0 
+            </div>
+            <button
+              aria-label="Previous page"
+              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-previous mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              disabled="true"
+              mat-icon-button=""
+              type="button"
+            >
+              <span
+                class="mat-button-wrapper"
+              >
+                <svg
+                  class="mat-paginator-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                matripple=""
+              />
+              <span
+                class="mat-button-focus-overlay"
+              />
+            </button>
+            <button
+              aria-label="Next page"
+              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              disabled="true"
+              mat-icon-button=""
+              type="button"
+            >
+              <span
+                class="mat-button-wrapper"
+              >
+                <svg
+                  class="mat-paginator-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                matripple=""
+              />
+              <span
+                class="mat-button-focus-overlay"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-paginator>
+  </div>
+</contract-demo-contract-overview>
+`;
+
+exports[`ContractOverviewComponent should show correct initial headline and table 1`] = `
+<contract-demo-contract-overview
+  __ngContext__="0"
+  contractsFacade={[Function Object]}
+  dataSource={[Function MatTableDataSource]}
+  displayedColumns={[Function Array]}
+  filterResult$={[Function Subject]}
+  isError$={[Function Subject]}
+  loaded$={[Function Subject]}
+  paginator={[Function MatPaginator]}
+  searchTermControl={[Function FormControl2]}
+>
+  <h1>
+    Contracts overview
+  </h1><form
+    novalidate=""
+  >
+    <mat-form-field
+      appearance="standard"
+      class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-standard mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-valid _mat-animation-noopable"
+    >
+      <div
+        class="mat-form-field-wrapper"
+      >
+        <div
+          class="mat-form-field-flex"
+        >
+          <div
+            class="mat-form-field-infix"
+          >
+            <input
+              aria-invalid="false"
+              aria-required="false"
+              class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid cdk-text-field-autofill-monitored"
+              data-placeholder="Search for name"
+              matinput=""
+              placeholder="Search for name"
+            />
+            <span
+              class="mat-form-field-label-wrapper"
+            >
+              <label
+                class="mat-form-field-label mat-empty mat-form-field-empty"
+              >
+                <mat-label>
+                  Filter
+                </mat-label>
+              </label>
+            </span>
+          </div>
+        </div>
+        <div
+          class="mat-form-field-underline"
+        >
+          <span
+            class="mat-form-field-ripple"
+          />
+        </div>
+        <div
+          class="mat-form-field-subscript-wrapper"
+        >
+          <div
+            class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+            style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+          >
+            <div
+              class="mat-form-field-hint-spacer"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-form-field>
+  </form><div
+    class="mat-elevation-z8"
+  >
+    <div
+      class="loading"
+    >
+      <mat-spinner
+        class="mat-progress-spinner mat-spinner mat-primary mat-progress-spinner-indeterminate-animation _mat-animation-noopable"
+        mode="indeterminate"
+        role="progressbar"
+        style="width: 100px; height: 100px;"
+        tabindex="-1"
+      >
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          preserveAspectRatio="xMidYMid meet"
+          style="width: 100px; height: 100px;"
+          viewBox="0 0 100 100"
+        >
+          <circle
+            cx="50%"
+            cy="50%"
+            r="45"
+            style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.7433388230814px; stroke-width: 10%; transform-origin: 50% 50%;"
+          />
+        </svg>
+      </mat-spinner>
+    </div>
+    <mat-paginator
+      aria-label="Select page of contracts"
+      class="mat-paginator"
+      role="group"
+    >
+      <div
+        class="mat-paginator-outer-container"
+      >
+        <div
+          class="mat-paginator-container"
+        >
+          <div
+            class="mat-paginator-page-size"
+          >
+            <div
+              class="mat-paginator-page-size-label"
+            >
+               Items per page: 
+            </div>
+            <mat-form-field
+              class="mat-form-field mat-paginator-page-size-select mat-primary mat-form-field-type-mat-select mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder _mat-animation-noopable"
+            >
+              <div
+                class="mat-form-field-wrapper"
+              >
+                <div
+                  class="mat-form-field-flex"
+                >
+                  <div
+                    class="mat-form-field-infix"
+                  >
+                    <mat-select
+                      aria-autocomplete="none"
+                      aria-disabled="false"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                      aria-invalid="false"
+                      aria-label="Items per page:"
+                      aria-required="false"
+                      class="mat-select mat-select-empty"
+                      role="combobox"
+                      tabindex="0"
+                    >
+                      <div
+                        cdk-overlay-origin=""
+                        class="mat-select-trigger"
+                      >
+                        <div
+                          class="mat-select-value"
+                        >
+                          <span
+                            class="mat-select-placeholder mat-select-min-line"
+                          >
+                          </span>
+                        </div>
+                        <div
+                          class="mat-select-arrow-wrapper"
+                        >
+                          <div
+                            class="mat-select-arrow"
+                          />
+                        </div>
+                      </div>
+                    </mat-select>
+                    <span
+                      class="mat-form-field-label-wrapper"
+                    >
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="mat-form-field-underline"
+                >
+                  <span
+                    class="mat-form-field-ripple"
+                  />
+                </div>
+                <div
+                  class="mat-form-field-subscript-wrapper"
+                >
+                  <div
+                    class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+                    style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+                  >
+                    <div
+                      class="mat-form-field-hint-spacer"
+                    />
+                  </div>
+                </div>
+              </div>
+            </mat-form-field>
+          </div>
+          <div
+            class="mat-paginator-range-actions"
+          >
+            <div
+              class="mat-paginator-range-label"
+            >
+               0 of 0 
+            </div>
+            <button
+              aria-label="Previous page"
+              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-previous mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              disabled="true"
+              mat-icon-button=""
+              type="button"
+            >
+              <span
+                class="mat-button-wrapper"
+              >
+                <svg
+                  class="mat-paginator-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                matripple=""
+              />
+              <span
+                class="mat-button-focus-overlay"
+              />
+            </button>
+            <button
+              aria-label="Next page"
+              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              disabled="true"
+              mat-icon-button=""
+              type="button"
+            >
+              <span
+                class="mat-button-wrapper"
+              >
+                <svg
+                  class="mat-paginator-icon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                matripple=""
+              />
+              <span
+                class="mat-button-focus-overlay"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </mat-paginator>
+  </div>
+</contract-demo-contract-overview>
+`;
