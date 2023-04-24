@@ -1,4 +1,6 @@
 {
+  "name": "contract-frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/contract-frontend/src",
   "prefix": "contract-demo",
@@ -88,14 +90,14 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/contract-frontend"],
+      "outputs": ["{workspaceRoot}/coverage/apps/contract-frontend"],
       "options": {
         "jestConfig": "apps/contract-frontend/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "serve-all": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["nx serve api", "nx serve contract-frontend"],
         "parallel": true
