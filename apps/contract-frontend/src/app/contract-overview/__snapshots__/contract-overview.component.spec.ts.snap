@@ -2,7 +2,6 @@
 
 exports[`ContractOverviewComponent should show correct initial headline and table 1`] = `
 <contract-demo-contract-overview
-  __ngContext__="0"
   contractsFacade={[Function Object]}
   dataSource={[Function MatTableDataSource]}
   destroy$={[Function Subject]}
@@ -19,57 +18,62 @@ exports[`ContractOverviewComponent should show correct initial headline and tabl
     novalidate=""
   >
     <mat-form-field
-      appearance="standard"
-      class="mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-standard mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-valid _mat-animation-noopable"
+      appearance="outline"
+      class="mat-mdc-form-field mat-mdc-form-field-type-mat-input mat-form-field-no-animations mat-form-field-appearance-outline mat-form-field-hide-placeholder mat-primary ng-untouched ng-pristine ng-valid"
     >
       <div
-        class="mat-form-field-wrapper"
+        class="mat-mdc-text-field-wrapper mdc-text-field mdc-text-field--outlined"
       >
         <div
-          class="mat-form-field-flex"
+          class="mat-mdc-form-field-flex"
         >
           <div
-            class="mat-form-field-infix"
+            class="mdc-notched-outline mdc-notched-outline--upgraded"
+            matformfieldnotchedoutline=""
           >
-            <input
-              aria-invalid="false"
-              aria-required="false"
-              class="mat-input-element mat-form-field-autofill-control ng-untouched ng-pristine ng-valid cdk-text-field-autofill-monitored"
-              data-placeholder="Search for name"
-              matinput=""
-              placeholder="Search for name"
+            <div
+              class="mdc-notched-outline__leading"
             />
-            <span
-              class="mat-form-field-label-wrapper"
+            <div
+              class="mdc-notched-outline__notch"
             >
               <label
-                class="mat-form-field-label mat-empty mat-form-field-empty"
+                class="mdc-floating-label mat-mdc-floating-label"
+                matformfieldfloatinglabel=""
+                style="transition-duration: 0s;"
               >
                 <mat-label>
                   Filter
                 </mat-label>
               </label>
-            </span>
-          </div>
-        </div>
-        <div
-          class="mat-form-field-underline"
-        >
-          <span
-            class="mat-form-field-ripple"
-          />
-        </div>
-        <div
-          class="mat-form-field-subscript-wrapper"
-        >
-          <div
-            class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
-            style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
-          >
+            </div>
             <div
-              class="mat-form-field-hint-spacer"
+              class="mdc-notched-outline__trailing"
             />
           </div>
+          <div
+            class="mat-mdc-form-field-infix"
+          >
+            <input
+              aria-invalid="false"
+              aria-required="false"
+              class="mat-mdc-input-element ng-untouched ng-pristine ng-valid mat-mdc-form-field-input-control mdc-text-field__input cdk-text-field-autofill-monitored"
+              matinput=""
+              placeholder="Search for name"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-bottom-align"
+      >
+        <div
+          class="mat-mdc-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
+        >
+          <div
+            class="mat-mdc-form-field-hint-spacer"
+          />
         </div>
       </div>
     </mat-form-field>
@@ -80,182 +84,269 @@ exports[`ContractOverviewComponent should show correct initial headline and tabl
       class="loading"
     >
       <mat-spinner
-        class="mat-progress-spinner mat-spinner mat-primary mat-progress-spinner-indeterminate-animation _mat-animation-noopable"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        class="mat-mdc-progress-spinner mdc-circular-progress mat-primary _mat-animation-noopable mdc-circular-progress--indeterminate"
         mode="indeterminate"
         role="progressbar"
         style="width: 100px; height: 100px;"
         tabindex="-1"
       >
-        <svg
+        <div
           aria-hidden="true"
-          focusable="false"
-          preserveAspectRatio="xMidYMid meet"
-          style="width: 100px; height: 100px;"
-          viewBox="0 0 100 100"
+          class="mdc-circular-progress__determinate-container"
         >
-          <circle
-            cx="50%"
-            cy="50%"
-            r="45"
-            style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.7433388230814px; stroke-width: 10%; transform-origin: 50% 50%;"
-          />
-        </svg>
+          <svg
+            class="mdc-circular-progress__determinate-circle-graphic"
+            focusable="false"
+            viewBox="0 0 100 100"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              class="mdc-circular-progress__determinate-circle"
+              cx="50%"
+              cy="50%"
+              r="45"
+              style="stroke-dasharray: 282.7433388230814px; stroke-width: 10%;"
+            />
+          </svg>
+        </div>
+        <div
+          aria-hidden="true"
+          class="mdc-circular-progress__indeterminate-container"
+        >
+          <div
+            class="mdc-circular-progress__spinner-layer"
+          >
+            <div
+              class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-left"
+            >
+              <svg
+                class="mdc-circular-progress__indeterminate-circle-graphic"
+                focusable="false"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="45"
+                  style="stroke-dasharray: 282.7433388230814px; stroke-dashoffset: 141.3716694115407px; stroke-width: 10%;"
+                />
+              </svg>
+            </div>
+            <div
+              class="mdc-circular-progress__gap-patch"
+            >
+              <svg
+                class="mdc-circular-progress__indeterminate-circle-graphic"
+                focusable="false"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="45"
+                  style="stroke-dasharray: 282.7433388230814px; stroke-dashoffset: 141.3716694115407px; stroke-width: 10%;"
+                />
+              </svg>
+            </div>
+            <div
+              class="mdc-circular-progress__circle-clipper mdc-circular-progress__circle-right"
+            >
+              <svg
+                class="mdc-circular-progress__indeterminate-circle-graphic"
+                focusable="false"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="50%"
+                  cy="50%"
+                  r="45"
+                  style="stroke-dasharray: 282.7433388230814px; stroke-dashoffset: 141.3716694115407px; stroke-width: 10%;"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
       </mat-spinner>
     </div>
     <mat-paginator
       aria-label="Select page of contracts"
-      class="mat-paginator"
+      class="mat-mdc-paginator"
       role="group"
     >
       <div
-        class="mat-paginator-outer-container"
+        class="mat-mdc-paginator-outer-container"
       >
         <div
-          class="mat-paginator-container"
+          class="mat-mdc-paginator-container"
         >
           <div
-            class="mat-paginator-page-size"
+            class="mat-mdc-paginator-page-size"
           >
             <div
-              class="mat-paginator-page-size-label"
+              class="mat-mdc-paginator-page-size-label"
             >
                Items per page: 
             </div>
             <mat-form-field
-              class="mat-form-field mat-paginator-page-size-select mat-primary mat-form-field-type-mat-select mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder _mat-animation-noopable"
+              class="mat-mdc-form-field mat-mdc-paginator-page-size-select mat-mdc-form-field-type-mat-select mat-form-field-no-animations mat-form-field-appearance-outline mat-primary"
             >
               <div
-                class="mat-form-field-wrapper"
+                class="mat-mdc-text-field-wrapper mdc-text-field mdc-text-field--outlined mdc-text-field--no-label"
               >
                 <div
-                  class="mat-form-field-flex"
+                  class="mat-mdc-form-field-flex"
                 >
                   <div
-                    class="mat-form-field-infix"
+                    class="mdc-notched-outline mdc-notched-outline--no-label"
+                    matformfieldnotchedoutline=""
+                  >
+                    <div
+                      class="mdc-notched-outline__leading"
+                    />
+                    <div
+                      class="mdc-notched-outline__notch"
+                    >
+                    </div>
+                    <div
+                      class="mdc-notched-outline__trailing"
+                    />
+                  </div>
+                  <div
+                    class="mat-mdc-form-field-infix"
                   >
                     <mat-select
                       aria-autocomplete="none"
                       aria-disabled="false"
                       aria-expanded="false"
-                      aria-haspopup="true"
+                      aria-haspopup="listbox"
                       aria-invalid="false"
-                      aria-label="Items per page:"
                       aria-required="false"
-                      class="mat-select mat-select-empty"
+                      class="mat-mdc-select mat-mdc-select-empty"
+                      hidesingleselectionindicator=""
                       role="combobox"
                       tabindex="0"
                     >
                       <div
                         cdk-overlay-origin=""
-                        class="mat-select-trigger"
+                        class="mat-mdc-select-trigger"
                       >
                         <div
-                          class="mat-select-value"
+                          class="mat-mdc-select-value"
                         >
                           <span
-                            class="mat-select-placeholder mat-select-min-line"
+                            class="mat-mdc-select-placeholder mat-mdc-select-min-line"
                           >
                           </span>
                         </div>
                         <div
-                          class="mat-select-arrow-wrapper"
+                          class="mat-mdc-select-arrow-wrapper"
                         >
                           <div
-                            class="mat-select-arrow"
-                          />
+                            class="mat-mdc-select-arrow"
+                          >
+                            <svg
+                              focusable="false"
+                              height="24px"
+                              viewBox="0 0 24 24"
+                              width="24px"
+                            >
+                              <path
+                                d="M7 10l5 5 5-5z"
+                              />
+                            </svg>
+                          </div>
                         </div>
                       </div>
                     </mat-select>
-                    <span
-                      class="mat-form-field-label-wrapper"
-                    >
-                    </span>
                   </div>
                 </div>
+              </div>
+              <div
+                class="mat-mdc-form-field-subscript-wrapper mat-mdc-form-field-bottom-align"
+              >
                 <div
-                  class="mat-form-field-underline"
-                >
-                  <span
-                    class="mat-form-field-ripple"
-                  />
-                </div>
-                <div
-                  class="mat-form-field-subscript-wrapper"
+                  class="mat-mdc-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
+                  style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
                 >
                   <div
-                    class="mat-form-field-hint-wrapper ng-trigger ng-trigger-transitionMessages"
-                    style="opacity:1;transform:translateY(0%);0:opacity;1:transform;"
-                  >
-                    <div
-                      class="mat-form-field-hint-spacer"
-                    />
-                  </div>
+                    class="mat-mdc-form-field-hint-spacer"
+                  />
                 </div>
               </div>
             </mat-form-field>
           </div>
           <div
-            class="mat-paginator-range-actions"
+            class="mat-mdc-paginator-range-actions"
           >
             <div
-              class="mat-paginator-range-label"
+              aria-live="polite"
+              class="mat-mdc-paginator-range-label"
             >
                0 of 0 
             </div>
             <button
               aria-label="Previous page"
-              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-previous mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              class="mat-mdc-tooltip-trigger mat-mdc-paginator-navigation-previous mdc-icon-button mat-mdc-icon-button _mat-animation-noopable mat-unthemed mat-mdc-button-base"
               disabled="true"
               mat-icon-button=""
               type="button"
             >
               <span
-                class="mat-button-wrapper"
+                class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"
+              />
+              <svg
+                class="mat-mdc-paginator-icon"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  class="mat-paginator-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
               <span
-                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                class="mat-mdc-focus-indicator"
+              />
+              <span
+                class="mat-ripple mat-mdc-button-ripple"
                 matripple=""
               />
               <span
-                class="mat-button-focus-overlay"
+                class="mat-mdc-button-touch-target"
               />
             </button>
             <button
               aria-label="Next page"
-              class="mat-focus-indicator mat-tooltip-trigger mat-paginator-navigation-next mat-icon-button mat-button-base _mat-animation-noopable mat-button-disabled"
+              class="mat-mdc-tooltip-trigger mat-mdc-paginator-navigation-next mdc-icon-button mat-mdc-icon-button _mat-animation-noopable mat-unthemed mat-mdc-button-base"
               disabled="true"
               mat-icon-button=""
               type="button"
             >
               <span
-                class="mat-button-wrapper"
+                class="mat-mdc-button-persistent-ripple mdc-icon-button__ripple"
+              />
+              <svg
+                class="mat-mdc-paginator-icon"
+                focusable="false"
+                viewBox="0 0 24 24"
               >
-                <svg
-                  class="mat-paginator-icon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
-                  />
-                </svg>
-              </span>
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                />
+              </svg>
               <span
-                class="mat-ripple mat-button-ripple mat-button-ripple-round"
+                class="mat-mdc-focus-indicator"
+              />
+              <span
+                class="mat-ripple mat-mdc-button-ripple"
                 matripple=""
               />
               <span
-                class="mat-button-focus-overlay"
+                class="mat-mdc-button-touch-target"
               />
             </button>
           </div>

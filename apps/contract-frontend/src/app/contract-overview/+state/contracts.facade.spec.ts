@@ -2,20 +2,16 @@ import { NgModule } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule, Store } from '@ngrx/store';
-import { NxModule } from '@nrwl/angular';
 import { readFirst } from '@nrwl/angular/testing';
 
 import * as ContractsActions from './contracts.actions';
 import { ContractsEffects } from './contracts.effects';
 import { ContractsFacade } from './contracts.facade';
-import { ContractsEntity } from './contracts.models';
 import {
   CONTRACTS_FEATURE_KEY,
   ContractsState,
-  initialContractsState,
   contractsReducer,
 } from './contracts.reducer';
-import * as ContractsSelectors from './contracts.selectors';
 
 interface TestSchema {
   contracts: ContractsState;
@@ -24,10 +20,6 @@ interface TestSchema {
 describe('ContractsFacade', () => {
   let facade: ContractsFacade;
   let store: Store<TestSchema>;
-  const createContractsEntity = (id: string, name = ''): ContractsEntity => ({
-    id,
-    name: name || `name-${id}`,
-  });
 
   describe('used in NgModule', () => {
     beforeEach(() => {
@@ -42,7 +34,6 @@ describe('ContractsFacade', () => {
 
       @NgModule({
         imports: [
-          NxModule.forRoot(),
           StoreModule.forRoot({}),
           EffectsModule.forRoot([]),
           CustomFeatureModule,
