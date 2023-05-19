@@ -5,9 +5,9 @@ export const getContractsState = createFeatureSelector<ContractsState>(
   CONTRACTS_FEATURE_KEY
 );
 
-export const getContractsLoaded = createSelector(
+export const getContractsLoading = createSelector(
   getContractsState,
-  (state: ContractsState) => state.loaded
+  (state: ContractsState) => state.loading
 );
 
 export const getContractsError = createSelector(

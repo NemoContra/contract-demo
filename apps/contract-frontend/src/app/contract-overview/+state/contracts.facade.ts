@@ -6,14 +6,14 @@ import { ContractFilterQuery } from '@contract-demo/api-interfaces';
 import {
   getAllContracts,
   getContractsError,
-  getContractsLoaded,
+  getContractsLoading,
 } from './contracts.selectors';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContractsFacade {
-  loaded$ = this.store.select(getContractsLoaded);
+  loading$ = this.store.select(getContractsLoading);
   allContracts$ = this.store.select(getAllContracts);
   getContractsError$ = this.store.select(getContractsError);
 

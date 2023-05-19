@@ -7,7 +7,7 @@ export const CONTRACTS_FEATURE_KEY = 'contracts';
 
 export interface ContractsState {
   filterResult?: FilterResult;
-  loaded: boolean;
+  loading: boolean;
   error?: number;
 }
 
@@ -16,7 +16,7 @@ export interface ContractsPartialState {
 }
 
 export const initialContractsState: ContractsState = {
-  loaded: false,
+  loading: false,
 };
 
 const reducer = createReducer(
@@ -24,19 +24,19 @@ const reducer = createReducer(
   on(ContractActions.get, (state) => ({
     ...state,
     filterResult: undefined,
-    loaded: false,
+    loaded: true,
     error: undefined,
   })),
   on(ContractActions.success, (state, { filterResult }) => ({
     ...state,
     filterResult,
-    loaded: true,
+    loaded: false,
   })),
   on(ContractActions.error, (state, { errorCode }) => ({
     ...state,
     error: errorCode,
     filterResult: undefined,
-    loaded: true,
+    loaded: false,
   }))
 );
 

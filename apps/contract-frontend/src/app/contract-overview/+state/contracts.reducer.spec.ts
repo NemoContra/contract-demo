@@ -27,7 +27,7 @@ describe('Contracts Reducer', () => {
         action
       );
 
-      expect(result.loaded).toBe(true);
+      expect(result.loading).toBe(true);
       expect(result.ids.length).toBe(2);
     });
   });
