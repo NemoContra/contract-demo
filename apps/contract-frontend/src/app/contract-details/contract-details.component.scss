@@ -1,0 +1,20 @@
+.title-container {
+  display: flex;
+  align-items: center;
+
+  padding: 5px 10px;
+  margin-bottom: 20px;
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  a {
+    margin-left: auto;
+  }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}

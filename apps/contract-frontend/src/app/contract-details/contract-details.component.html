@@ -1,0 +1,22 @@
+<ng-container *ngIf="isError$ | async as errorCode; else success">
+  <div class="error">Search failed with HTTP-Error {{ errorCode }}</div>
+</ng-container>
+<ng-template #success>
+  <ng-container *ngIf="loading$ | async; else content">
+    <div class="loading">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-container>
+  <ng-template #content>
+    <ng-container *ngIf="data$ | async as data">
+      <section class="title-container mat-elevation-z8">
+        <h1>{{data.vertragsnummer.formatiert}}</h1>
+        <a mat-button routerLink="..">go to overview</a>
+      </section>
+
+      <section class="data-container">
+        <p>{{data.vertragsbezeichnung}}</p>
+      </section>
+    </ng-container>
+  </ng-template>
+</ng-template>

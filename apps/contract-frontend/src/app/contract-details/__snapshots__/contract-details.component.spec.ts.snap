@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContractDetailsComponent should show correct data 1`] = `
+<contract-demo-contract-details
+  contractDetailsFacade={[Function Object]}
+  data$={[Function Subject]}
+  isError$={[Function Subject]}
+  loading$={[Function Subject]}
+>
+  <section
+    class="title-container mat-elevation-z8"
+  >
+    <h1>
+      ID-1
+    </h1>
+    <a
+      href="/"
+      mat-button=""
+      routerlink=".."
+    >
+      go to overview
+    </a>
+  </section><section
+    class="data-container"
+  >
+    <p>
+      this is a nice description of the data.
+    </p>
+  </section>
+</contract-demo-contract-details>
+`;

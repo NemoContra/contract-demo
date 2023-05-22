@@ -16,7 +16,12 @@
     <div class="error">Search failed with HTTP-Error {{ errorCode }}</div>
   </ng-container>
   <ng-template #success>
-    <ng-container *ngIf="loaded$ | async; else isLoading">
+    <ng-container *ngIf="loading$ | async; else content">
+      <div class="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-container>
+    <ng-template #content>
       <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -45,11 +50,6 @@
           <td class="mat-cell" colspan="4">No contracts found.</td>
         </tr>
       </table>
-    </ng-container>
-    <ng-template #isLoading>
-      <div class="loading">
-        <mat-spinner></mat-spinner>
-      </div>
     </ng-template>
   </ng-template>
 

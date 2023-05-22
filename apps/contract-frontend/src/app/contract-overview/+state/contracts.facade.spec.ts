@@ -51,7 +51,7 @@ describe('ContractsFacade', () => {
      */
     it('loadAll() should return empty list with loaded == true', async () => {
       let list = await readFirst(facade.allContracts$);
-      let isLoaded = await readFirst(facade.loaded$);
+      let isLoaded = await readFirst(facade.loading$);
 
       expect(list.length).toBe(0);
       expect(isLoaded).toBe(false);
@@ -59,7 +59,7 @@ describe('ContractsFacade', () => {
       facade.init();
 
       list = await readFirst(facade.allContracts$);
-      isLoaded = await readFirst(facade.loaded$);
+      isLoaded = await readFirst(facade.loading$);
 
       expect(list.length).toBe(0);
       expect(isLoaded).toBe(true);
@@ -70,7 +70,7 @@ describe('ContractsFacade', () => {
      */
     it('allContracts$ should return the loaded list; and loaded flag == true', async () => {
       let list = await readFirst(facade.allContracts$);
-      let isLoaded = await readFirst(facade.loaded$);
+      let isLoaded = await readFirst(facade.loading$);
 
       expect(list.length).toBe(0);
       expect(isLoaded).toBe(false);
@@ -85,7 +85,7 @@ describe('ContractsFacade', () => {
       );
 
       list = await readFirst(facade.allContracts$);
-      isLoaded = await readFirst(facade.loaded$);
+      isLoaded = await readFirst(facade.loading$);
 
       expect(list.length).toBe(2);
       expect(isLoaded).toBe(true);

@@ -52,7 +52,7 @@ describe('Contracts Selectors', () => {
     });
 
     it('getContractsLoaded() should return the current "loaded" status', () => {
-      const result = ContractsSelectors.getContractsLoaded(state);
+      const result = ContractsSelectors.getContractsLoading(state);
 
       expect(result).toBe(true);
     });

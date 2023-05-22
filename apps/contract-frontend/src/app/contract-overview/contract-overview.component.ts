@@ -24,7 +24,7 @@ export class ContractOverviewComponent
 {
   filterResult$: Observable<FilterResult | undefined> =
     this.contractsFacade.allContracts$;
-  loaded$: Observable<boolean> = this.contractsFacade.loaded$;
+  loading$: Observable<boolean> = this.contractsFacade.loading$;
   isError$: Observable<number | undefined> =
     this.contractsFacade.getContractsError$;
 

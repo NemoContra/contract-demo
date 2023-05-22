@@ -17,3 +17,15 @@ export interface FilterResult {
   contracts: Contract[];
   totalElements: number;
 }
+
+export interface GroupcontractOverviewData {
+  vertragsnummer: Vertragsnummer;
+  vorvertragsnummern: Vertragsnummer[];
+  vertragsbezeichnung: string;
+}
+
+export interface Vertragsnummer {
+  id: string;
+  formatiert: string;
+}
+

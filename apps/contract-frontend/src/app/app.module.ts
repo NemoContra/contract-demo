@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { MatTabsModule } from "@angular/material/tabs";
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,11 +25,19 @@ import { EffectsModule } from '@ngrx/effects';
           ),
       },
       {
+        path: 'details',
+        loadChildren: () =>
+          import('./contract-details/contract-details.module').then(
+            (m) => m.ContractDetailsModule
+          ),
+      },
+      {
         path: '**',
         redirectTo: '',
         pathMatch: 'full',
       },
     ]),
+    MatTabsModule,
     MatButtonModule,
     StoreModule.forRoot([]),
     EffectsModule.forRoot(),
