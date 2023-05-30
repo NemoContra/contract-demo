@@ -80,17 +80,17 @@ const mockContractDetailsData: GroupcontractOverviewData =
   {
     vertragsnummer: {
       id: '1',
-      formatiert: 'ID-1'
+      formated: 'ID-1'
     },
-    vorvertragsnummern: [
+    oldContractNumbers: [
       {
         id: 'A1',
-        formatiert: 'Old-ID-1'
+        formated: 'Old-ID-1'
       },
       {
         id: 'A2',
-        formatiert: 'Old-ID-2'
+        formated: 'Old-ID-2'
       }
     ],
-    vertragsbezeichnung: 'this is a nice description of the data.'
+    description: 'this is a nice description of the data.'
   };
