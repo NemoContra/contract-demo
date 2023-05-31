@@ -19,13 +19,13 @@ export interface FilterResult {
 }
 
 export interface GroupcontractOverviewData {
-  vertragsnummer: Vertragsnummer;
-  vorvertragsnummern: Vertragsnummer[];
-  vertragsbezeichnung: string;
+  contractNumber: ContractNumber;
+  previousContractNumbers: ContractNumber[];
+  description: string;
 }
 
-export interface Vertragsnummer {
+export interface ContractNumber {
   id: string;
-  formatiert: string;
+  formatted: string;
 }
 

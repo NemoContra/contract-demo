@@ -78,19 +78,19 @@ describe('ContractDetailsComponent', () => {
 
 const mockContractDetailsData: GroupcontractOverviewData =
   {
-    vertragsnummer: {
+    contractNumber: {
       id: '1',
-      formatiert: 'ID-1'
+      formatted: 'ID-1'
     },
-    vorvertragsnummern: [
+    previousContractNumbers: [
       {
         id: 'A1',
-        formatiert: 'Old-ID-1'
+        formatted: 'Old-ID-1'
       },
       {
         id: 'A2',
-        formatiert: 'Old-ID-2'
+        formatted: 'Old-ID-2'
       }
     ],
-    vertragsbezeichnung: 'this is a nice description of the data.'
+    description: 'this is a nice description of the data.'
   };

@@ -10,12 +10,12 @@
   <ng-template #content>
     <ng-container *ngIf="data$ | async as data">
       <section class="title-container mat-elevation-z8">
-        <h1>{{data.vertragsnummer.formatiert}}</h1>
+        <h1>{{data.contractNumber.formatted}}</h1>
         <a mat-button routerLink="..">go to overview</a>
       </section>
 
       <section class="data-container">
-        <p>{{data.vertragsbezeichnung}}</p>
+        <p>{{data.description}}</p>
       </section>
     </ng-container>
   </ng-template>
