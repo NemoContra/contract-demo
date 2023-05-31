@@ -20,12 +20,12 @@ export interface FilterResult {
 
 export interface GroupcontractOverviewData {
   contractNumber: ContractNumber;
-  oldContractNumbers: ContractNumber[];
+  previousContractNumbers: ContractNumber[];
   description: string;
 }
 
 export interface ContractNumber {
   id: string;
-  formated: string;
+  formatted: string;
 }
 
