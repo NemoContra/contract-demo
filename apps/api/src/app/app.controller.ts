@@ -1,9 +1,12 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe, Query } from '@nestjs/common';
 
 import { AppService } from './app.service';
-import { ContractType, FilterResult, GroupcontractOverviewData } from '@contract-demo/api-interfaces';
+import {
+  ContractType,
+  FilterResult,
+  GroupcontractOverviewData,
+} from '@contract-demo/api-interfaces';
 import { delay, Observable, of } from 'rxjs';
-import { contractDetailsData } from "./contract-details";
 
 @Controller('')
 export class AppController {
@@ -12,13 +15,15 @@ export class AppController {
   @Get('contracts')
   getData(
     @Query('term') term: string | undefined,
-    @Query('contract-type') type: ContractType | undefined
+    @Query('contract-type') type: ContractType | undefined,
   ): Observable<FilterResult> {
     return of(this.appService.getContracts(term, type)).pipe(delay(500));
   }
 
-  @Get('contract-details')
-  getDetailsData(): Observable<GroupcontractOverviewData> {
-    return of(contractDetailsData).pipe(delay(500));
+  @Get('contract-details/:contractId')
+  getDetailsData(
+    @Param('contractId', ParseIntPipe) contractId: number,
+  ): Observable<GroupcontractOverviewData> {
+    return of(this.appService.getContract(contractId)).pipe(delay(500));
   }
 }

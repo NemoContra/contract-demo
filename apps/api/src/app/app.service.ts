@@ -3,8 +3,10 @@ import {
   Contract,
   ContractType,
   FilterResult,
+  GroupcontractOverviewData,
 } from '@contract-demo/api-interfaces';
 import { contractsData } from './contracts';
+import { contractDetailsData } from './contract-details';
 
 @Injectable()
 export class AppService {
@@ -12,7 +14,7 @@ export class AppService {
     term: string | undefined,
     type: ContractType | undefined,
     pageNumber = 0,
-    pageSize = 10
+    pageSize = 10,
   ): FilterResult {
     let contracts: Contract[] = contractsData;
 
@@ -30,7 +32,7 @@ export class AppService {
           (conntract.person.firstname + ' ' + conntract.person.lastname)
             .toLowerCase()
             .includes(lowerCase) ||
-          conntract.id?.toLowerCase().includes(lowerCase)
+          conntract.id?.toLowerCase().includes(lowerCase),
       );
     }
 
@@ -42,6 +44,27 @@ export class AppService {
     return {
       contracts: pageElements,
       totalElements: contracts.length,
+    };
+  }
+
+  getContract(contractId: number): GroupcontractOverviewData {
+    return {
+      ...contractDetailsData,
+      contractNumber: {
+        id: `${contractId}`,
+        formatted: `ID-${contractId}`,
+      },
+      previousContractNumbers: [
+        {
+          id: `A${contractId}`,
+          formatted: `Old-ID-${contractId}`,
+        },
+        {
+          id: `A${contractId + 1}`,
+          formatted: `Old-ID-${contractId + 1}`,
+        },
+      ],
+      description: 'this is a nice description of the data.',
     };
   }
 }
