@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { MatTabsModule } from "@angular/material/tabs";
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,7 +36,7 @@ import { MatTabsModule } from "@angular/material/tabs";
         redirectTo: '',
         pathMatch: 'full',
       },
-    ]),
+    ], { bindToComponentInputs: true }),
     MatTabsModule,
     MatButtonModule,
     StoreModule.forRoot([]),
@@ -44,4 +44,5 @@ import { MatTabsModule } from "@angular/material/tabs";
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
