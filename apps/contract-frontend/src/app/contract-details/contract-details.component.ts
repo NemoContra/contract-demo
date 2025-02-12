@@ -4,9 +4,10 @@ import { Observable } from "rxjs";
 import { GroupcontractOverviewData } from "@contract-demo/api-interfaces";
 
 @Component({
-  selector: 'contract-demo-contract-details',
-  templateUrl: './contract-details.component.html',
-  styleUrls: ['./contract-details.component.scss']
+    selector: 'contract-demo-contract-details',
+    templateUrl: './contract-details.component.html',
+    styleUrls: ['./contract-details.component.scss'],
+    standalone: false
 })
 export class ContractDetailsComponent implements OnInit {
 
