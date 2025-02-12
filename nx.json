@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "affected": {
-    "defaultBase": "main"
-  },
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"],
@@ -61,5 +58,7 @@
       "style": "scss"
     }
   },
-  "defaultProject": "contract-frontend"
+  "defaultProject": "contract-frontend",
+  "useInferencePlugins": false,
+  "defaultBase": "main"
 }
