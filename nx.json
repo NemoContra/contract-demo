@@ -60,5 +60,6 @@
   },
   "defaultProject": "contract-frontend",
   "useInferencePlugins": false,
-  "defaultBase": "main"
+  "defaultBase": "main",
+  "useLegacyCache": true
 }

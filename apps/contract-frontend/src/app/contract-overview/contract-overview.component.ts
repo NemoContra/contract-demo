@@ -14,10 +14,11 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'contract-demo-contract-overview',
-  templateUrl: './contract-overview.component.html',
-  styleUrls: ['./contract-overview.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'contract-demo-contract-overview',
+    templateUrl: './contract-overview.component.html',
+    styleUrls: ['./contract-overview.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class ContractOverviewComponent
   implements OnInit, AfterViewInit, OnDestroy
